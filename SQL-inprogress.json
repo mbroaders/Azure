@@ -70,6 +70,7 @@
     },
     "adminUsername": {
       "type": "String",
+      "defaultValue": "servermaster",
       "metadata": {
         "description": "The admin user name of the VM"
       }
