@@ -11,7 +11,7 @@
     },
     "virtualMachineSize": {
       "type": "String",
-      "defaultValue": "Standard_DS13_v2",
+      "defaultValue": "Standard_D2s_v3",
       "metadata": {
         "description": "The virtual machine size."
       }              },
@@ -21,19 +21,21 @@
     },
     "existingVirtualNetworkName": {
       "type": "String",
+      "defaultValue": "vnet-prod-01",
       "metadata": {
         "description": "Specify the name of an existing VNet in the same resource group"
       }
     },
     "existingVnetResourceGroup": {
       "type": "String",
-      "defaultValue": "[resourceGroup().name]",
+      "defaultValue": "rg-prod-vnet-01",
       "metadata": {
-        "description": "Specify the resrouce group of the existing VNet"
+        "description": "Specify the resource group of the existing VNet"
       }
     },
     "existingSubnetName": {
       "type": "String",
+      "defaultValue": "snet-prod-servers-01",
       "metadata": {
         "description": "Specify the name of the Subnet Name"
       }
@@ -99,7 +101,7 @@
       "minValue": 1,
       "maxValue": 8,
       "metadata": {
-        "description": "Amount of data disks (1TB each) for SQL Data files"
+        "description": "Amount of data disks (128GB each) for SQL Data files"
       }
     },
     "dataPath": {
@@ -115,7 +117,7 @@
       "minValue": 1,
       "maxValue": 8,
       "metadata": {
-        "description": "Amount of data disks (1TB each) for SQL Log files"
+        "description": "Amount of data disks (128GB each) for SQL Log files"
       }
     },
     "logPath": {
@@ -144,7 +146,7 @@
       "caching": "ReadOnly",
       "writeAcceleratorEnabled": false,
       "storageAccountType": "Premium_LRS",
-      "diskSizeGB": 1023
+      "diskSizeGB": 128
     },
     "tempDbPath": "D:\\SQLTemp"
   },
