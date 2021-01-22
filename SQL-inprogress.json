@@ -185,6 +185,7 @@
         },
         "storageProfile": {
           "osDisk": {
+            "name": "[concat(parameters('virtualMachineName'), '-osdisk')]",
             "createOption": "fromImage",
             "managedDisk": {
               "storageAccountType": "Premium_LRS"
@@ -198,9 +199,10 @@
           },
           "copy": [
             {
-              "name": "dataDisks",
+              "name": "datadisks",
               "count": "[add(parameters('sqlDataDisksCount'), parameters('sqlLogDisksCount'))]",
-              "input": {
+              "input": {   
+                "name": "[concat(parameters('virtualMachineName'), '-dataDisk', padLeft(copyIndex('dataDisks'), 2, '0'))]",             
                 "lun": "[copyIndex('dataDisks')]",
                 "createOption": "[variables('dataDisks').createOption]",
                 "caching": "[if(greaterOrEquals(copyIndex('dataDisks'), parameters('sqlDataDisksCount')) ,'None', variables('dataDisks').caching )]",
