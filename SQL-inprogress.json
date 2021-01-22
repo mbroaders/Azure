@@ -19,7 +19,7 @@
       "type": "string",
       "defaultValue": "xxx-nic01"
     },
-    "existingVirtualNetworkName": {
+    "virtualNetworkId": {
       "type": "String",
       "defaultValue": "vnet-prod-01",
       "metadata": {
