@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "virtualMachineName": {
+        "value": "bi-az-ag-sql01"
+      },
+      "virtualMachineSize": {
+        "value": "Standard_D2s_v3"
+      },
+      "networkInterfaceName": {
+        "value": "bi-az-ag-sql01-nic01"
+      },
+      "virtualNetworkId": {
+        "value": "/subscriptions/cb05d35e-5e63-4c1f-a551-1eb1d7515d45/resourceGroups/rg-prod-vnet-01/providers/Microsoft.Network/virtualNetworks/vnet-prod-01"
+      },
+      "existingVnetResourceGroup": {
+        "value": "rg-prod-vnet-01"
+      },
+      "subnetName": {
+        "value": "snet-prod-servers-01"
+      },
+      "imageOffer": {
+        "value": "sql2019-ws2019"
+      },
+      "sqlSku": {
+        "value": "Standard"
+      },
+      "adminUsername": {
+        "value": "servermaster"
+      },
+      "adminPassword": {
+        "value": null
+      },
+      "storageWorkloadType": {
+        "value": "General"
+      },
+      "sqlDataDisksCount": {
+        "value": 1
+      },
+      "dataPath": {
+        "value": "F:\\SQLData"
+      },
+      "sqlLogDisksCount": {
+        "value": 1
+      },
+      "logPath": {
+        "value": "G:\\SQLLog"
+      },
+      "location": {
+        "value": "[resourceGroup().location]"
+      }
+    }
+  }
